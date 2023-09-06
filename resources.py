@@ -1,0 +1,1 @@
+resource1 = 'ARI-004873'
