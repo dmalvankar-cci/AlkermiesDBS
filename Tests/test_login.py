@@ -17,8 +17,10 @@ def test_loginToAlkermies(driver):
     # Login to the page
     # username = readCreds.read_data(2, 1)
     # password = readCreds.read_data(2, 2)
-    login_page.perform_tradelogin()
-    login_page.click_aristasaCheckOne()
+    login_page.perform_Kamlogin()
+    # login_page.perform_mmdlogin()
+    # login_page.perform_tradelogin()
+    login_page.click_Aristada_IDN()
     login_page.click_goBtn()
 
 
@@ -26,10 +28,11 @@ def test_loginToAlkermies(driver):
 def test_checkLinksInPdf(driver, test_loginToAlkermies):
 
     resource_page = resourcePage(driver)
+    # Give the resource id here
     resource = resources.resource1
     resource_page.send_textInSearch(resource)
     resource_page.click_eye()
     resource_page.total_links()
-    resource_page.click_links()
+    resource_page.hit_links()
 
 

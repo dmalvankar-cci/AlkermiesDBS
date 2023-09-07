@@ -11,10 +11,16 @@ class loginPage:
     __password_textField = (By.ID, 'pwd')
     __login_button = (By.XPATH, "//span[normalize-space()='Sign In']")
 
-    __checkbox = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[1]/label[1]")
-    __checkbox2 = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/label[1]/span[1]")
     __goBtn = (By.ID, "go-btn")
 
+    __Vivitrol_IDN = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/label[1]")
+    __Vivitrol_CJ = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/label[1]")
+    __Vivitrol_NTS = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[2]/div[3]/div[3]/div[1]/label[1]")
+
+    __Lybalvi_IDN = (By.XPATH, "//div[@class='text-center pt-40 w-100 product-layout']//div[2]//div[2]//div[1]//div[1]//div[1]//label[1]//span[1]")
+
+    __Aristada_IDN = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[1]/label[1]")
+    __Aristada_CJ = (By.XPATH, "//body[1]/app-root[1]/div[1]/dbc-blank-layout[1]/div[1]/dbc-product-selection[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[4]/div[2]/div[2]/div[2]/div[1]/label[1]")
 
     __treatment = (By.XPATH, "(//div[@class='resources-icon'])[3]")
     __all_links = (By.TAG_NAME, "a")
@@ -75,22 +81,38 @@ class loginPage:
         self._driver.find_element(*self.__goBtn).click()
 
 
-
-    def click_checkbox(self):
+    def click_Vivitrol_IDN(self):
         wait = WebDriverWait(self._driver, 20)
-        wait.until(ec.presence_of_element_located(self.__checkbox))
-        self._driver.find_element(*self.__checkbox).click()
+        wait.until(ec.presence_of_element_located(self.__Vivitrol_IDN))
+        self._driver.find_element(*self.__Vivitrol_IDN).click()
 
-    def click_aristasaCheckOne(self):
+    def click_Vivitrol_CJ(self):
         wait = WebDriverWait(self._driver, 20)
-        wait.until(ec.presence_of_element_located(self.__aristadaCheckboxOne))
-        self._driver.find_element(*self.__aristadaCheckboxOne).click()
+        wait.until(ec.presence_of_element_located(self.__Vivitrol_CJ))
+        self._driver.find_element(*self.__Vivitrol_CJ).click()
+
+    def click_Vivitrol_NTS(self):
+        wait = WebDriverWait(self._driver, 20)
+        wait.until(ec.presence_of_element_located(self.__Vivitrol_NTS))
+        self._driver.find_element(*self.__Vivitrol_NTS).click()
+
+    def click_Lybalvi_IDN(self):
+        wait = WebDriverWait(self._driver, 20)
+        wait.until(ec.presence_of_element_located(self.__Lybalvi_IDN))
+        self._driver.find_element(*self.__Lybalvi_IDN).click()
+
+    def click_Aristada_IDN(self):
+        wait = WebDriverWait(self._driver, 20)
+        wait.until(ec.presence_of_element_located(self.__Aristada_IDN))
+        self._driver.find_element(*self.__Aristada_IDN).click()
+
+    def click__Aristada_CJ(self):
+        wait = WebDriverWait(self._driver, 20)
+        wait.until(ec.presence_of_element_located(self.__Aristada_CJ))
+        self._driver.find_element(*self.__Aristada_CJ).click()
 
 
-    def click_checkbox2(self):
-        wait = WebDriverWait(self._driver, 15)
-        wait.until(ec.presence_of_element_located(self.__checkbox2))
-        self._driver.find_element(*self.__checkbox2).click()
+
 
 
 
