@@ -38,6 +38,19 @@ class loginPage:
     def current_url(self):
         return self._driver.current_url
 
+
+
+
+    def perform_login(self):
+        userType = readCreds.read_data(2,3)
+        if userType == 'Kam':
+            self.perform_Kamlogin()
+        elif userType == 'Mmd':
+            self.perform_mmdlogin()
+        elif userType == 'Trade':
+            self.perform_tradelogin()
+
+
     def perform_Kamlogin(self):
         pass_username = self._driver.find_element(*self.__username_textField)
         pass_password = self._driver.find_element(*self.__password_textField)
@@ -76,38 +89,38 @@ class loginPage:
         press_loginBtn.click()
 
     def click_goBtn(self):
-        wait = WebDriverWait(self._driver, 10)
+        wait = WebDriverWait(self._driver, 30)
         wait.until(ec.presence_of_element_located(self.__goBtn))
         self._driver.find_element(*self.__goBtn).click()
 
 
     def click_Vivitrol_IDN(self):
-        wait = WebDriverWait(self._driver, 20)
+        wait = WebDriverWait(self._driver, 50)
         wait.until(ec.presence_of_element_located(self.__Vivitrol_IDN))
         self._driver.find_element(*self.__Vivitrol_IDN).click()
 
     def click_Vivitrol_CJ(self):
-        wait = WebDriverWait(self._driver, 20)
+        wait = WebDriverWait(self._driver, 50)
         wait.until(ec.presence_of_element_located(self.__Vivitrol_CJ))
         self._driver.find_element(*self.__Vivitrol_CJ).click()
 
     def click_Vivitrol_NTS(self):
-        wait = WebDriverWait(self._driver, 20)
+        wait = WebDriverWait(self._driver, 50)
         wait.until(ec.presence_of_element_located(self.__Vivitrol_NTS))
         self._driver.find_element(*self.__Vivitrol_NTS).click()
 
     def click_Lybalvi_IDN(self):
-        wait = WebDriverWait(self._driver, 20)
+        wait = WebDriverWait(self._driver, 50)
         wait.until(ec.presence_of_element_located(self.__Lybalvi_IDN))
         self._driver.find_element(*self.__Lybalvi_IDN).click()
 
     def click_Aristada_IDN(self):
-        wait = WebDriverWait(self._driver, 20)
+        wait = WebDriverWait(self._driver, 50)
         wait.until(ec.presence_of_element_located(self.__Aristada_IDN))
         self._driver.find_element(*self.__Aristada_IDN).click()
 
     def click__Aristada_CJ(self):
-        wait = WebDriverWait(self._driver, 20)
+        wait = WebDriverWait(self._driver, 50)
         wait.until(ec.presence_of_element_located(self.__Aristada_CJ))
         self._driver.find_element(*self.__Aristada_CJ).click()
 

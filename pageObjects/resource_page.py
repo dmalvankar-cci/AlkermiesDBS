@@ -87,12 +87,11 @@ class resourcePage:
 
     def total_links(self):
         time.sleep(10)
-        wait = WebDriverWait(self._driver, 50)
+        wait = WebDriverWait(self._driver, 70)
         wait.until(ec.visibility_of_element_located(self.__pages))
-        Page_count = self._driver.find_element(*self.__pages).get_attribute("max")
-        page_count_int = int(Page_count)
+        page_count_int = int(self._driver.find_element(*self.__pages).get_attribute("max"))
         for page_count_int in range(1, page_count_int):
-            wait = WebDriverWait(self._driver, 50)
+            wait = WebDriverWait(self._driver, 70)
             wait.until(ec.visibility_of_element_located(self.__next_page))
             next_btnClick = self._driver.find_element(*self.__next_page)
             next_btnClick.click()
@@ -124,7 +123,7 @@ class resourcePage:
             # link.click()
             href = link.get_attribute("href")
             r = requests.get(href)
-            if href == None:
+            if href == "":
                 print(f"Url is having Null value")
                 print(f"-------------------------")
 
@@ -154,12 +153,12 @@ class resourcePage:
                         print(f"Correct Internal links:", {href})
                         print(f"------------------------------")
                 except requests.exceptions.RequestException:
-                    print(Number, ":", f"Error checking Internal link:", {r.status_code, r.reason})
+                    print(Number, ":", f"Error checking Internal link:", {href})
                     Number += 1
                     print(f"------------------------------")
 
-            print(f"*************************************")
-            print(f"...Links Check Completed...")
+        print(f"*************************************")
+        print(f"...Links Check Completed...")
 
 
 

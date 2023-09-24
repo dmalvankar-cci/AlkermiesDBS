@@ -4,6 +4,7 @@ import pytest
 from selenium.webdriver import ActionChains, Keys
 
 import resources
+from Tests import readCreds
 from pageObjects.login_page import loginPage
 from pageObjects.resource_page import resourcePage
 
@@ -12,14 +13,10 @@ from pageObjects.resource_page import resourcePage
 def test_loginToAlkermies(driver):
     # Open Browser
     login_page = loginPage(driver)
-    # Navigate to Site URL
+    # # Navigate to Site URL
     login_page.open()
-    # Login to the page
-    # username = readCreds.read_data(2, 1)
-    # password = readCreds.read_data(2, 2)
-    login_page.perform_Kamlogin()
-    # login_page.perform_mmdlogin()
-    # login_page.perform_tradelogin()
+    # # Login to the page
+    login_page.perform_login()
     login_page.click_Aristada_IDN()
     login_page.click_goBtn()
 
@@ -28,11 +25,12 @@ def test_loginToAlkermies(driver):
 def test_checkLinksInPdf(driver, test_loginToAlkermies):
 
     resource_page = resourcePage(driver)
-    # Give the resource id here
+    # # Give the resource id here
     resource = resources.resource1
     resource_page.send_textInSearch(resource)
     resource_page.click_eye()
     resource_page.total_links()
     resource_page.hit_links()
+
 
 
